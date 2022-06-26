@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
 	imports: [
@@ -16,7 +17,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
             database: process.env.POSTGRES_DB,
             models: [],
             autoLoadModels: true
-		  })
+		  }),
+		TodoModule
 	]
 })
 export class AppModule { }
