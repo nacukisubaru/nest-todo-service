@@ -17,7 +17,7 @@ import { TodoModule } from './todo/todo.module';
             database: process.env.POSTGRES_DB,
             models: [],
             autoLoadModels: true
-		  }),
+		}),
 		TodoModule
 	]
 })

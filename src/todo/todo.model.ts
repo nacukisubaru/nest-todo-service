@@ -1,7 +1,14 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
+//используем для определения полей которые будут использоваться при запросе(dto)
+interface TodoCreationAttrs {
+    title: string;
+    description: string;
+    isComplete: boolean;
+}
+
 @Table({tableName: 'todo'})
-export class Todo extends Model {
+export class Todo extends Model<Todo, TodoCreationAttrs> {
 
   @Column({type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true})
   id: number;
