@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { TodoModule } from './todo/todo.module';
 import { SectionsModule } from './sections/sections.module';
+import { TestModule } from './test/test.module';
 
 @Module({
 	imports: [
@@ -21,6 +22,7 @@ import { SectionsModule } from './sections/sections.module';
 		}),
 		TodoModule,
 		SectionsModule,
+		TestModule,
 	]
 })
 export class AppModule { }
