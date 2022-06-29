@@ -1,7 +1,7 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 interface SectionsCreationAttrs {
-    title: string;
+    id: number;
     name: string;
 }
 
