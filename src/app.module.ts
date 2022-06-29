@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { Groups } from './groups/groups.model';
+import { GroupsModule } from './groups/groups.module';
+import { Todo } from './todo/todo.model';
 import { TodoModule } from './todo/todo.module';
-import { SectionsModule } from './sections/sections.module';
-import { TestModule } from './test/test.module';
 
 @Module({
 	imports: [
@@ -17,12 +18,11 @@ import { TestModule } from './test/test.module';
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.POSTGRES_DB,
-            models: [],
+            models: [Todo, Groups],
             autoLoadModels: true
 		}),
 		TodoModule,
-		SectionsModule,
-		TestModule,
+		GroupsModule
 	]
 })
 export class AppModule { }

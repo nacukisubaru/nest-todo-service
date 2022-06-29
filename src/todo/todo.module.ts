@@ -3,6 +3,7 @@ import { TodoService } from './todo.service';
 import { TodoController } from './todo.controller';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Todo } from './todo.model';
+import { Groups } from 'src/groups/groups.model';
 
 @Module({
     providers: [TodoService],
@@ -10,7 +11,7 @@ import { Todo } from './todo.model';
     imports: [
         //определяем какие модели зарегистрированы в текущей области
         //для того чтобы внедрить зависимость модель в сервис
-        SequelizeModule.forFeature([Todo])
+        SequelizeModule.forFeature([Todo, Groups])
     ]
 })
 export class TodoModule { }
