@@ -6,7 +6,7 @@ interface SectionsCreationAttrs {
 }
 
 @Table({tableName: 'sections'})
-export class Todo extends Model<Todo, SectionsCreationAttrs> {
+export class Sections extends Model<Sections, SectionsCreationAttrs> {
 
   @Column({type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true})
   id: number;
