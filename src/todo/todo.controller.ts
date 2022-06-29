@@ -1,4 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
+import { OnCommand } from 'discord-nestjs';
+import { Message } from 'discord.js';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { TodoService } from './todo.service';
 
