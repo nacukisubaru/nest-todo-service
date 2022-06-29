@@ -1,4 +1,5 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from 'sequelize-typescript';
+import { Groups } from 'src/groups/groups.model';
 
 //используем для определения полей которые будут использоваться при запросе(dto)
 interface TodoCreationAttrs {
@@ -21,4 +22,10 @@ export class Todo extends Model<Todo, TodoCreationAttrs> {
   
   @Column({type: DataType.BOOLEAN, defaultValue: false})
   isComplete: boolean;
+
+  @ForeignKey(() => Groups)
+  groupId: number;
+
+  @BelongsTo(() => Groups)
+  group: Groups
 }
