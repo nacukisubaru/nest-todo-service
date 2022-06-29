@@ -1,12 +1,12 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
-interface SectionsCreationAttrs {
+interface GroupsCreationAttrs {
     id: number;
     name: string;
 }
 
-@Table({tableName: 'sections'})
-export class Sections extends Model<Sections, SectionsCreationAttrs> {
+@Table({tableName: 'groups'})
+export class Groups extends Model<Groups, GroupsCreationAttrs> {
 
   @Column({type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true})
   id: number;
